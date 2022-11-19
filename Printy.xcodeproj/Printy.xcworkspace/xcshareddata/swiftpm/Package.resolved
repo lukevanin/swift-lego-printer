@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "swift-mindstorms",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/lukevanin/swift-mindstorms",
+      "state" : {
+        "branch" : "main",
+        "revision" : "59731ed30ef9dd23d1f93e94ba010556533d2c46"
+      }
+    }
+  ],
+  "version" : 2
+}

@@ -1,36 +1,49 @@
-//
-//  AppDelegate.swift
-//  Printy
-//
-//  Created by Luke Van In on 2022/11/16.
-//
-
 import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
+    
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        application.isIdleTimerDisabled = true
+        Task {
+            let configuration = Printer.Configuration(
+                xAxis: Printer.Configuration.Axis(
+                    port: .F,
+                    speed: 10,
+                    camLength: Measurement(value: 8, unit: .millimeters),
+                    startAngle: Measurement(value: 179, unit: .degrees),
+                    endAngle: Measurement(value: 0, unit: .degrees),
+                    backlashAngle: Measurement(value: -50, unit: .degrees)
+                ),
+                yAxis: Printer.Configuration.Axis(
+                    port: .D,
+                    speed: 10,
+                    camLength: Measurement(value: 8, unit: .millimeters),
+                    startAngle: Measurement(value: 179, unit: .degrees),
+                    endAngle: Measurement(value: 0, unit: .degrees),
+                    backlashAngle: Measurement(value: -50, unit: .degrees)
+                ),
+                penAxis: Printer.Configuration.Axis(
+                    port: .B,
+                    speed: 30,
+                    camLength: Measurement(value: 8, unit: .millimeters),
+                    startAngle: Measurement(value: 290, unit: .degrees),
+                    endAngle: Measurement(value: 330, unit: .degrees),
+                    backlashAngle: Measurement(value: 0, unit: .degrees)
+                )
+            )
+            let printer = await Printer(configuration: configuration)
+            let viewController = MainViewController(printer: printer)
+            let window = UIWindow()
+            window.rootViewController = viewController
+            window.makeKeyAndVisible()
+            self.window = window
+        }
         return true
     }
-
-    // MARK: UISceneSession Lifecycle
-
-    func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
-        // Called when a new scene session is being created.
-        // Use this method to select a configuration to create the new scene with.
-        return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
-    }
-
-    func application(_ application: UIApplication, didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
-        // Called when the user discards a scene session.
-        // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-        // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
-    }
-
 
 }
 
