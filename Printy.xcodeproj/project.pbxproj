@@ -17,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		FC9DF9512924DB1B008E8D79 /* Printer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
+		FC9DF953292CEB43008E8D79 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FCE646542924C339004EB546 /* Printy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Printy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE646572924C339004EB546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCE6465B2924C339004EB546 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 		FCE646562924C339004EB546 /* Printy */ = {
 			isa = PBXGroup;
 			children = (
+				FC9DF953292CEB43008E8D79 /* README.md */,
 				FCE646572924C339004EB546 /* AppDelegate.swift */,
 				FCE6465B2924C339004EB546 /* MainViewController.swift */,
 				FC9DF9512924DB1B008E8D79 /* Printer.swift */,
