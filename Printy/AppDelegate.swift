@@ -1,5 +1,7 @@
 import UIKit
 
+
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -15,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 xAxis: Printer.Configuration.GearAxis(
                     motor: Printer.Configuration.Motor(
                         port: .C,
-                        speed: 75
+                        speed: 100
                     ),
                     ratio: 24,
                     camLength: Measurement(value: 8, unit: .millimeters),
@@ -25,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 yAxis: Printer.Configuration.GearAxis(
                     motor: Printer.Configuration.Motor(
                         port: .E,
-                        speed: 75
+                        speed: 100
                     ),
                     ratio: 24,
                     camLength: Measurement(value: 8, unit: .millimeters),

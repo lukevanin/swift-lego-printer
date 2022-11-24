@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		FC9DF9502924DAD1008E8D79 /* SwiftMindstorms in Frameworks */ = {isa = PBXBuildFile; productRef = FC9DF94F2924DAD1008E8D79 /* SwiftMindstorms */; };
 		FC9DF9522924DB1B008E8D79 /* Printer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DF9512924DB1B008E8D79 /* Printer.swift */; };
+		FC9DF955292D5400008E8D79 /* GearedMotorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DF954292D5400008E8D79 /* GearedMotorController.swift */; };
+		FC9DF959292D5472008E8D79 /* LinearCamMotorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DF958292D5472008E8D79 /* LinearCamMotorController.swift */; };
+		FC9DF95B292D5491008E8D79 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DF95A292D5491008E8D79 /* Protocols.swift */; };
+		FC9DF95D292D7A5F008E8D79 /* DirectMotorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DF95C292D7A5F008E8D79 /* DirectMotorController.swift */; };
+		FC9DF95F292E0B1D008E8D79 /* LinearBacklashMotorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DF95E292E0B1D008E8D79 /* LinearBacklashMotorController.swift */; };
 		FCE646582924C339004EB546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE646572924C339004EB546 /* AppDelegate.swift */; };
 		FCE6465C2924C339004EB546 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6465B2924C339004EB546 /* MainViewController.swift */; };
 		FCE646612924C33A004EB546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCE646602924C33A004EB546 /* Assets.xcassets */; };
@@ -18,6 +23,11 @@
 /* Begin PBXFileReference section */
 		FC9DF9512924DB1B008E8D79 /* Printer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
 		FC9DF953292CEB43008E8D79 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FC9DF954292D5400008E8D79 /* GearedMotorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearedMotorController.swift; sourceTree = "<group>"; };
+		FC9DF958292D5472008E8D79 /* LinearCamMotorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearCamMotorController.swift; sourceTree = "<group>"; };
+		FC9DF95A292D5491008E8D79 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		FC9DF95C292D7A5F008E8D79 /* DirectMotorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectMotorController.swift; sourceTree = "<group>"; };
+		FC9DF95E292E0B1D008E8D79 /* LinearBacklashMotorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearBacklashMotorController.swift; sourceTree = "<group>"; };
 		FCE646542924C339004EB546 /* Printy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Printy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE646572924C339004EB546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCE6465B2924C339004EB546 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +71,11 @@
 				FCE646572924C339004EB546 /* AppDelegate.swift */,
 				FCE6465B2924C339004EB546 /* MainViewController.swift */,
 				FC9DF9512924DB1B008E8D79 /* Printer.swift */,
+				FC9DF95A292D5491008E8D79 /* Protocols.swift */,
+				FC9DF95E292E0B1D008E8D79 /* LinearBacklashMotorController.swift */,
+				FC9DF958292D5472008E8D79 /* LinearCamMotorController.swift */,
+				FC9DF954292D5400008E8D79 /* GearedMotorController.swift */,
+				FC9DF95C292D7A5F008E8D79 /* DirectMotorController.swift */,
 				FCE646602924C33A004EB546 /* Assets.xcassets */,
 				FCE646622924C33A004EB546 /* LaunchScreen.storyboard */,
 				FCE646652924C33A004EB546 /* Info.plist */,
@@ -144,9 +159,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC9DF95B292D5491008E8D79 /* Protocols.swift in Sources */,
+				FC9DF959292D5472008E8D79 /* LinearCamMotorController.swift in Sources */,
+				FC9DF955292D5400008E8D79 /* GearedMotorController.swift in Sources */,
 				FC9DF9522924DB1B008E8D79 /* Printer.swift in Sources */,
 				FCE6465C2924C339004EB546 /* MainViewController.swift in Sources */,
+				FC9DF95D292D7A5F008E8D79 /* DirectMotorController.swift in Sources */,
 				FCE646582924C339004EB546 /* AppDelegate.swift in Sources */,
+				FC9DF95F292E0B1D008E8D79 /* LinearBacklashMotorController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

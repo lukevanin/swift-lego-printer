@@ -45,6 +45,22 @@ final class MainViewController: UIViewController {
         return button
     }()
 
+    private let yRangeButton: UIButton = {
+        var configuration = UIButton.Configuration.filled()
+        configuration.image = UIImage(systemName: "arrow.up.and.down")
+        let button = UIButton(configuration: configuration)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
+    private let xRangeButton: UIButton = {
+        var configuration = UIButton.Configuration.filled()
+        configuration.image = UIImage(systemName: "arrow.left.and.right")
+        let button = UIButton(configuration: configuration)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+
     private let yDecrementButton: UIButton = {
         var configuration = UIButton.Configuration.filled()
         configuration.image = UIImage(systemName: "arrow.up")
@@ -139,6 +155,8 @@ final class MainViewController: UIViewController {
             layout.addArrangedSubview(xIncrementButton)
             layout.addArrangedSubview(yDecrementButton)
             layout.addArrangedSubview(yIncrementButton)
+            layout.addArrangedSubview(xRangeButton)
+            layout.addArrangedSubview(yRangeButton)
             layout.addArrangedSubview(testButton)
             layout.addArrangedSubview(printButton)
             layout.addArrangedSubview(stopButton)
@@ -191,6 +209,9 @@ final class MainViewController: UIViewController {
         yIncrementButton.addTarget(self, action: #selector(onYAxisStopAction), for: [.touchUpInside, .touchUpOutside, .touchCancel])
         yDecrementButton.addTarget(self, action: #selector(onYAxisDecrementStartAction), for: .touchDown)
         yDecrementButton.addTarget(self, action: #selector(onYAxisStopAction), for: [.touchUpInside, .touchUpOutside, .touchCancel])
+
+        xRangeButton.addTarget(self, action: #selector(onXRangeAction), for: .touchUpInside)
+        yRangeButton.addTarget(self, action: #selector(onYRangeAction), for: .touchUpInside)
 
         clearButton.addAction(
             UIAction { [weak self] _ in
@@ -260,6 +281,14 @@ final class MainViewController: UIViewController {
     
     @objc func onYAxisStopAction(button: UIButton) {
         printer.controlYAxis(direction: 0)
+    }
+    
+    @objc func onXRangeAction(button: UIButton) {
+        printer.rangeXAxis()
+    }
+    
+    @objc func onYRangeAction(button: UIButton) {
+        printer.rangeYAxis()
     }
 
     @objc func onCanvasImageTap(gesture: UITapGestureRecognizer) {
