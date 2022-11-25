@@ -1,4 +1,5 @@
 import Foundation
+import Combine
 import OSLog
 
 import SwiftMindstorms
@@ -40,20 +41,24 @@ private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: 
         var yAxis: GearAxis
         var penAxis: CamAxis
     }
-
     
-    // MARK: State
-    
-//    private class AnyState {
-//        unowned var context: Printer!
-//
-//        func enter() { }
-//    }
+    enum PrintingState {
+        case stopped
+        case printing
+    }
     
     // MARK: Variables
+
+    var connectionStatePublisher: AnyPublisher<HubConnectionStatus, Never>!
+    lazy var printingStatePublisher: AnyPublisher<PrintingState, Never> = printingStateSubject.eraseToAnyPublisher()
     
-    private var printing = false
-//    private var axisDistance = [MotorPort : Int]()
+    private var printingStateSubject = CurrentValueSubject<PrintingState, Never>(.stopped)
+    private var printing = false {
+        didSet {
+            let state: PrintingState = printing ? .printing : .stopped
+            printingStateSubject.send(state)
+        }
+    }
     
     private var xAxisController: LinearMotorController!
     private var yAxisController: LinearMotorController!
@@ -67,6 +72,7 @@ private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: 
             let connection = await BluetoothConnection()
             let hub = await Hub(connection: connection)
             let robot = await Robot(orientation: .left, hub: hub)
+            self.connectionStatePublisher = await robot.connectionStatus.eraseToAnyPublisher()
             self.robot = robot
             self.configuration = configuration
             self.xAxisController = LinearBacklashMotorController(
@@ -178,7 +184,6 @@ private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: 
         printing = false
     }
 
-
     func plot(_ image: Image) {
         Task {
             guard printing == false else {
@@ -274,13 +279,6 @@ private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: 
         )
     }
 
-//    private func homeAxis(_ axis: Configuration.GearAxis) async throws {
-//        try await zeroAxis(axis)
-//        try await moveAxis(axis, angle: axis.backlash * Double(axis.ratio))
-//        try await moveAxis(axis, angle: axis.resolution * Double(+axis.ratio))
-//        try await moveAxis(axis, angle: axis.resolution * Double(-axis.ratio))
-//    }
-    
     private func controlAxis(_ axis: Configuration.GearAxis, direction: Int) async throws {
         if direction == 0 {
             try await robot.motorStop(
@@ -304,79 +302,10 @@ private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: 
     }
     
     private func stepAxis(_ axis: LinearMotorController, step: Int, steps: Int) async throws {
-//        let backlashDegrees = axis.backlashAngle
-//        let startDegrees = axis.startAngle + backlashDegrees
-//        let endDegrees = axis.endAngle
-//
-//        let startDistance = axis.angleToDistance(startDegrees).converted(to: .millimeters).value
-//        let endDistance = axis.angleToDistance(endDegrees).converted(to: .millimeters).value
-//
-//        let stepDistance = (endDistance - startDistance) / Double(steps)
-//        let distance = startDistance + (stepDistance * Double(step))
-//
-//        let angle = axis.distanceToAngle(Measurement(value: distance, unit: .millimeters))
-
-//        let stepAngle = (endDegrees - startDegrees) / Double(steps)
-//        let angle = startDegrees + (stepAngle * Double(step))
-//        try await robot.motorGoDirectionToPosition(
-//            port: axis.port,
-//            position: Int(angle.converted(to: .degrees).value.rounded()),
-//            direction: .shortest,
-//            speed: axis.speed,
-//            stall: true,
-//            stop: 0
-//        )
-
-//        let startDegrees = axis.backlash * Double(axis.ratio)
-//        let endDegrees = axis.resolution * Double(axis.ratio)
-//
-//        let stepAngle = (endDegrees - startDegrees) / Double(steps)
-
-//        let startAngle = axis.backlash
-//        let endAngle = axis.resolution
-//
-//        let startDistance = axis.angleToDistance(startAngle).converted(to: .millimeters).value
-//        let endDistance = axis.angleToDistance(endAngle).converted(to: .millimeters).value
-//
-//        let stepDistance = (endDistance - startDistance) / Double(steps)
-//        let distance = startDistance + (stepDistance * Double(step))
-//
-//        let targetAngle = axis.distanceToAngle(Measurement(value: distance, unit: .millimeters)).converted(to: .degrees).value
-//        let currentAngle = Double(axisDistance[axis.motor.port, default: 0]) / Double(axis.ratio)
-//        let stepAngle = Measurement<UnitAngle>(value: targetAngle - currentAngle, unit: .degrees)
-
-//        let step
-//        let stepAngle = (endDegrees - startDegrees) / Double(steps)
-        
-
-//        print("Step", step, "out of", steps)
-//        print("Start Angle", startDegrees)
-//        print("End Angle", endDegrees)
-//        print("Step Angle", stepAngle)
-//        print("Start Distance", startDistance)
-//        print("End Distance", endDistance)
-//        print("Step Distance", stepDistance)
-//        print("Step Angle", stepAngle)
-
         let minPosition = axis.minimumPosition
         let maxPosition = axis.maximumPosition
         let stepSize = (maxPosition - minPosition) / Double(steps)
         
         try await axis.move(by: stepSize)
     }
-    
-//    private func moveAxis(_ axis: Configuration.GearAxis, angle: Measurement<UnitAngle>) async throws {
-//
-//        let angleDegrees = Int(angle.converted(to: .degrees).value.rounded())
-//
-//        axisDistance[axis.motor.port, default: 0] += angleDegrees
-//
-//        try await robot.motorRunForDegrees(
-//            port: axis.motor.port,
-//            degrees: angleDegrees,
-//            speed: axis.motor.speed,
-//            stall: true
-//        )
-//
-//    }
 }

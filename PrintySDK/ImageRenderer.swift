@@ -83,7 +83,8 @@ public struct ImageRenderer {
                             dy: inset.height
                         )
                         configuration.dotColor.setFill()
-                        context.fill(fillBounds)
+//                        context.fill(fillBounds)
+                        context.cgContext.fillEllipse(in: fillBounds)
                     }
                 }
             }

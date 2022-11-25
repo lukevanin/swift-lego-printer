@@ -309,225 +309,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9B382DD5-71F1-490C-912A-1FA926DA7105"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Printy/Printer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301"
-            landmarkName = "rangeAxis(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9B382DD5-71F1-490C-912A-1FA926DA7105 - 55fc9e7cbfb488d9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Printy.Printer.rangeAxis(Printy.LinearMotorController) async throws -&gt; ()"
-                  moduleName = "Printy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "301"
-                  endingLineNumber = "301"
-                  offsetFromSymbolStart = "84">
-               </Location>
-               <Location
-                  uuid = "9B382DD5-71F1-490C-912A-1FA926DA7105 - 941dfed3a38b6432"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for Printy.Printer.rangeAxis(Printy.LinearMotorController) async throws -&gt; ()"
-                  moduleName = "Printy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "301"
-                  endingLineNumber = "301"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "9B382DD5-71F1-490C-912A-1FA926DA7105 - e3f587f19f193ad2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(8) suspend resume partial function for Printy.Printer.rangeAxis(Printy.LinearMotorController) async throws -&gt; ()"
-                  moduleName = "Printy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "301"
-                  endingLineNumber = "301"
-                  offsetFromSymbolStart = "76">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9EC1E4E7-9BEF-4155-B61F-A5D1AB6AF100"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Printy/Printer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302"
-            landmarkName = "rangeAxis(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9EC1E4E7-9BEF-4155-B61F-A5D1AB6AF100 - 340ccecb8d8244f0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for Printy.Printer.rangeAxis(Printy.LinearMotorController) async throws -&gt; ()"
-                  moduleName = "Printy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "302"
-                  endingLineNumber = "302"
-                  offsetFromSymbolStart = "152">
-               </Location>
-               <Location
-                  uuid = "9EC1E4E7-9BEF-4155-B61F-A5D1AB6AF100 - eef7281cda632017"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) await resume partial function for Printy.Printer.rangeAxis(Printy.LinearMotorController) async throws -&gt; ()"
-                  moduleName = "Printy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "302"
-                  endingLineNumber = "302"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "9EC1E4E7-9BEF-4155-B61F-A5D1AB6AF100 - 149d3f5ada5900f2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(5) suspend resume partial function for Printy.Printer.rangeAxis(Printy.LinearMotorController) async throws -&gt; ()"
-                  moduleName = "Printy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "302"
-                  endingLineNumber = "302"
-                  offsetFromSymbolStart = "96">
-               </Location>
-               <Location
-                  uuid = "9EC1E4E7-9BEF-4155-B61F-A5D1AB6AF100 - d3bda038060398f6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(9) suspend resume partial function for Printy.Printer.rangeAxis(Printy.LinearMotorController) async throws -&gt; ()"
-                  moduleName = "Printy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "302"
-                  endingLineNumber = "302"
-                  offsetFromSymbolStart = "76">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "86FC4E23-67C2-49F4-A1B7-57378E8005F3"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Printy/Printer.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "303"
-            endingLineNumber = "303"
-            landmarkName = "rangeAxis(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "86FC4E23-67C2-49F4-A1B7-57378E8005F3 - 149d3f5ada590113"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(5) suspend resume partial function for Printy.Printer.rangeAxis(Printy.LinearMotorController) async throws -&gt; ()"
-                  moduleName = "Printy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "303"
-                  endingLineNumber = "303"
-                  offsetFromSymbolStart = "140">
-               </Location>
-               <Location
-                  uuid = "86FC4E23-67C2-49F4-A1B7-57378E8005F3 - 47509125123bfde8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(6) await resume partial function for Printy.Printer.rangeAxis(Printy.LinearMotorController) async throws -&gt; ()"
-                  moduleName = "Printy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "303"
-                  endingLineNumber = "303"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "86FC4E23-67C2-49F4-A1B7-57378E8005F3 - f32d6fa92834dd15"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(7) suspend resume partial function for Printy.Printer.rangeAxis(Printy.LinearMotorController) async throws -&gt; ()"
-                  moduleName = "Printy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "303"
-                  endingLineNumber = "303"
-                  offsetFromSymbolStart = "96">
-               </Location>
-               <Location
-                  uuid = "86FC4E23-67C2-49F4-A1B7-57378E8005F3 - 54c2be49f52982da"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(10) suspend resume partial function for Printy.Printer.rangeAxis(Printy.LinearMotorController) async throws -&gt; ()"
-                  moduleName = "Printy"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "303"
-                  endingLineNumber = "303"
-                  offsetFromSymbolStart = "76">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "7AA9EE47-478A-4138-8794-604C5C7F00E8"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -535,8 +316,8 @@
             filePath = "Printy/Printer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "controlXAxis(direction:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -567,9 +348,9 @@
             filePath = "Printy/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "150"
-            endingLineNumber = "150"
-            landmarkName = "documentBrowser(_:didImportDocumentAt:toDestinationURL:)"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "documentBrowser(_:didRequestDocumentCreationWithHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -583,9 +364,9 @@
             filePath = "Printy/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "158"
-            endingLineNumber = "158"
-            landmarkName = "documentBrowser(_:didPickDocumentsAt:)"
+            startingLineNumber = "182"
+            endingLineNumber = "182"
+            landmarkName = "documentBrowser(_:didImportDocumentAt:toDestinationURL:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -593,15 +374,15 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "CDE452A6-02EF-4246-BEC1-BE069D89FA29"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Printy/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "application(_:open:options:)"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
+            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -615,8 +396,8 @@
             filePath = "Printy/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "documentBrowser(_:didRequestDocumentCreationWithHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -631,8 +412,8 @@
             filePath = "Printy/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
             landmarkName = "documentBrowser(_:didRequestDocumentCreationWithHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -647,8 +428,8 @@
             filePath = "Printy/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "144"
-            endingLineNumber = "144"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "documentBrowser(_:didRequestDocumentCreationWithHandler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -663,9 +444,9 @@
             filePath = "Printy/AppDelegate.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "162"
-            endingLineNumber = "162"
-            landmarkName = "documentBrowser(_:failedToImportDocumentAt:error:)"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
+            landmarkName = "documentBrowser(_:didPickDocumentsAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

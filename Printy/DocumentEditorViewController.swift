@@ -7,29 +7,20 @@ private let elementSize: CGFloat = 44
 private let dotSize: CGFloat = 32
 
 
-@objc protocol DocumentEditorDelegate {
-    @objc optional func documentEditor(_ controller: DocumentEditorViewController, printDocument document: Document)
-    @objc optional func documentEditor(_ controller: DocumentEditorViewController, dismissDocument document: Document)
+@objc protocol DocumentEditorControllerDelegate {
+    @objc optional func documentEditorController(_ controller: DocumentEditorViewController, printDocument document: Document)
 }
 
 
 final class DocumentEditorViewController: UIViewController {
     
-    weak var delegate: DocumentEditorDelegate?
+    weak var delegate: DocumentEditorControllerDelegate?
 
     private let titleLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.font = UIFont.preferredFont(forTextStyle: .title1)
         return view
-    }()
-
-    private let dismissButton: UIButton = {
-        var configuration = UIButton.Configuration.borderless()
-        configuration.title = "Done"
-        let button = UIButton(configuration: configuration)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
     }()
 
     private let clearButton: UIButton = {
@@ -41,13 +32,8 @@ final class DocumentEditorViewController: UIViewController {
         return button
     }()
     
-    private let printButton: UIButton = {
-        var configuration = UIButton.Configuration.filled()
-        configuration.title = "Print"
-        configuration.image = UIImage(systemName: "printer.dotmatrix")
-        configuration.baseBackgroundColor = .systemGreen
-        let button = UIButton(configuration: configuration)
-        button.translatesAutoresizingMaskIntoConstraints = false
+    private let printButtonItem: UIBarButtonItem = {
+        let button = UIBarButtonItem(title: "Print")
         return button
     }()
     
@@ -72,11 +58,9 @@ final class DocumentEditorViewController: UIViewController {
     }()
 
     private let document: Document
-    private let printer: Printer
     
-    init(document: Document, printer: Printer) {
+    init(document: Document) {
         self.document = document
-        self.printer = printer
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -93,15 +77,15 @@ final class DocumentEditorViewController: UIViewController {
     
     private func setupView() {
         
-        let buttonsLayoutView: UIStackView = {
-            let layout = UIStackView()
-            layout.translatesAutoresizingMaskIntoConstraints = false
-            layout.axis = .horizontal
-            layout.spacing = 16
-            layout.addArrangedSubview(clearButton)
-            layout.addArrangedSubview(printButton)
-            return layout
-        }()
+//        let buttonsLayoutView: UIStackView = {
+//            let layout = UIStackView()
+//            layout.translatesAutoresizingMaskIntoConstraints = false
+//            layout.axis = .horizontal
+//            layout.spacing = 16
+//            layout.addArrangedSubview(clearButton)
+//            layout.addArrangedSubview(printButton)
+//            return layout
+//        }()
         
         let mainLayoutView: UIStackView = {
             let layout = UIStackView()
@@ -109,32 +93,33 @@ final class DocumentEditorViewController: UIViewController {
             layout.axis = .vertical
             layout.alignment = .center
             layout.distribution = .equalSpacing
+            layout.spacing = 32
             layout.addArrangedSubview(titleLabel)
             layout.addArrangedSubview(canvasImageView)
-            layout.addArrangedSubview(buttonsLayoutView)
+//            layout.addArrangedSubview(buttonsLayoutView)
             return layout
         }()
 
         view.addSubview(mainLayoutView)
-        view.addSubview(dismissButton)
         
         NSLayoutConstraint.activate([
             mainLayoutView.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
             mainLayoutView.centerYAnchor.constraint(equalTo: view.layoutMarginsGuide.centerYAnchor),
             
             mainLayoutView.widthAnchor.constraint(equalTo: view.layoutMarginsGuide.widthAnchor, constant: -64),
-            mainLayoutView.heightAnchor.constraint(equalTo: view.layoutMarginsGuide.heightAnchor, constant: -64),
-
-            dismissButton.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor, constant: -16),
-            dismissButton.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 16),
+//            mainLayoutView.heightAnchor.constraint(equalTo: view.layoutMarginsGuide.heightAnchor, constant: -64),
         ])
     }
     
     private func setupActions() {
 
         clearButton.addTarget(self, action: #selector(onClearAction), for: .touchUpInside)
-        printButton.addTarget(self, action: #selector(onPrintAction), for: .touchUpInside)
-        dismissButton.addTarget(self, action: #selector(onDismissAction), for: .touchUpInside)
+//        printButton.addTarget(self, action: #selector(onPrintAction), for: .touchUpInside)
+        
+        printButtonItem.target = self
+        printButtonItem.action = #selector(onPrintAction)
+        
+        navigationItem.leftBarButtonItem = printButtonItem
 
         let imageTapGesture = UITapGestureRecognizer(target: self, action: #selector(onCanvasImageTap))
         canvasImageView.isUserInteractionEnabled = true
@@ -154,12 +139,8 @@ final class DocumentEditorViewController: UIViewController {
         invalidateImage()
     }
     
-    @objc func onPrintAction(button: UIButton) {
-        delegate?.documentEditor?(self, printDocument: document)
-    }
-
-    @objc func onDismissAction(button: UIButton) {
-        delegate?.documentEditor?(self, dismissDocument: document)
+    @objc func onPrintAction(button: UIBarButtonItem) {
+        delegate?.documentEditorController?(self, printDocument: document)
     }
 
     @objc func onCanvasImageTap(gesture: UITapGestureRecognizer) {

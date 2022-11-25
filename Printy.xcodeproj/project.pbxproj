@@ -27,6 +27,7 @@
 		FC9DF9B429300EA0008E8D79 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DF984292FA243008E8D79 /* Document.swift */; };
 		FC9DF9B72930100F008E8D79 /* PrintySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9DF9A429300D90008E8D79 /* PrintySDK.framework */; };
 		FC9DF9B82930100F008E8D79 /* PrintySDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC9DF9A429300D90008E8D79 /* PrintySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		FC9DF9BD2930A6D9008E8D79 /* PrinterCalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DF9BC2930A6D9008E8D79 /* PrinterCalibrationViewController.swift */; };
 		FCE646582924C339004EB546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE646572924C339004EB546 /* AppDelegate.swift */; };
 		FCE6465C2924C339004EB546 /* DocumentEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6465B2924C339004EB546 /* DocumentEditorViewController.swift */; };
 		FCE646612924C33A004EB546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCE646602924C33A004EB546 /* Assets.xcassets */; };
@@ -119,6 +120,7 @@
 		FC9DF99729300CE6008E8D79 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC9DF9A429300D90008E8D79 /* PrintySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrintySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC9DF9A629300D90008E8D79 /* PrintySDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrintySDK.h; sourceTree = "<group>"; };
+		FC9DF9BC2930A6D9008E8D79 /* PrinterCalibrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrinterCalibrationViewController.swift; sourceTree = "<group>"; };
 		FCE646542924C339004EB546 /* Printy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Printy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE646572924C339004EB546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCE6465B2924C339004EB546 /* DocumentEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentEditorViewController.swift; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 				FC9DF960292F95DA008E8D79 /* DocumentBrowserViewController.swift */,
 				FCE6465B2924C339004EB546 /* DocumentEditorViewController.swift */,
 				FC9DF988292FB144008E8D79 /* PrintViewController.swift */,
+				FC9DF9BC2930A6D9008E8D79 /* PrinterCalibrationViewController.swift */,
 				FC9DF9512924DB1B008E8D79 /* Printer.swift */,
 				FC9DF95A292D5491008E8D79 /* Protocols.swift */,
 				FC9DF95E292E0B1D008E8D79 /* LinearBacklashMotorController.swift */,
@@ -405,6 +408,7 @@
 				FC9DF95D292D7A5F008E8D79 /* DirectMotorController.swift in Sources */,
 				FCE646582924C339004EB546 /* AppDelegate.swift in Sources */,
 				FC9DF95F292E0B1D008E8D79 /* LinearBacklashMotorController.swift in Sources */,
+				FC9DF9BD2930A6D9008E8D79 /* PrinterCalibrationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

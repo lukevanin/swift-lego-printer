@@ -64,32 +64,56 @@ class AppDelegate: UIResponder {
                 return
             }
             let viewController = DocumentEditorViewController(
-                document: document,
-                printer: printer
+                document: document
             )
-            viewController.modalPresentationStyle = .fullScreen
             viewController.delegate = self
-            documentBrowserViewController.present(viewController, animated: true, completion: nil)
+            
+            presentViewController(viewController, from: documentBrowserViewController, modalPresentationStyle: .pageSheet) {
+                document.autosave()
+            }
         }
+    }
+    
+    private func presentViewController(
+        _ viewController: UIViewController,
+        from presentingViewController: UIViewController,
+        modalPresentationStyle: UIModalPresentationStyle = .formSheet,
+        onDismiss: (() -> Void)? = nil
+    ) {
+        let dismissButton = UIBarButtonItem(
+            systemItem: .done,
+            primaryAction: UIAction { [weak presentingViewController] _ in
+                onDismiss?()
+                presentingViewController?.dismiss(animated: true)
+            }
+        )
+        viewController.navigationItem.rightBarButtonItem = dismissButton
+        
+        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.modalPresentationStyle = modalPresentationStyle
+        presentingViewController.present(navigationController, animated: true, completion: nil)
     }
 }
 
-extension AppDelegate: DocumentEditorDelegate {
+extension AppDelegate: DocumentEditorControllerDelegate {
     
-    func documentEditor(_ controller: DocumentEditorViewController, dismissDocument document: Document) {
-        logger.info("Dismiss document editor")
-        document.autosave()
-        controller.presentingViewController?.dismiss(animated: true, completion: nil)
-    }
-    
-    func documentEditor(_ controller: DocumentEditorViewController, printDocument document: Document) {
+    func documentEditorController(_ controller: DocumentEditorViewController, printDocument document: Document) {
         logger.info("Print document")
         let viewController = PrintViewController(
             document: document,
             printer: printer
         )
-        viewController.modalPresentationStyle = .fullScreen
-        controller.present(viewController, animated: true, completion: nil)
+        viewController.delegate = self
+        presentViewController(viewController, from: controller)
+    }
+}
+
+extension AppDelegate: PrintControllerDelegate {
+    
+    func printControllerDidCalibrate(_ controller: PrintViewController) {
+        logger.info("Calibrate")
+        let viewController = PrinterCalibrationViewController(printer: printer)
+        presentViewController(viewController, from: controller)
     }
 }
 
