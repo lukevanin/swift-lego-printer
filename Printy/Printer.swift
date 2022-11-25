@@ -3,6 +3,8 @@ import OSLog
 
 import SwiftMindstorms
 
+import PrintySDK
+
 
 private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: "Printer")
 
@@ -38,103 +40,7 @@ private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: 
         var yAxis: GearAxis
         var penAxis: CamAxis
     }
-    
-    struct Image {
-        
-        enum Pixel {
-            case x
-            case o
-        }
-        
-        let width: Int
-        let height: Int
-        var pixels: [[Pixel]]
-        
-        init(_ pixels: [[Pixel]]) {
-            self.height = pixels.count
-            self.width = pixels[0].count
-            self.pixels = pixels
-        }
-        
-        init(width: Int, height: Int) {
-            let row = Array<Pixel>(repeating: .o, count: width)
-            self.pixels = Array<[Pixel]>(repeating: row, count: height)
-            self.width = width
-            self.height = height
-        }
-        
-        func transposed() -> Image {
-            var output = Image(width: height, height: width)
-            for y in 0 ..< height {
-                for x in 0 ..< width {
-                    let pixel = getPixel(x: x, y: y)
-                    output.setPixel(x: y, y: x, value: pixel)
-                }
-            }
-            return output
-        }
-        
-        func mirrored() -> Image {
-            var output = Image(width: width, height: height)
-            for y in 0 ..< height {
-                for x in 0 ..< width {
-                    let pixel = getPixel(x: x, y: y)
-                    output.setPixel(x: width - x - 1, y: y, value: pixel)
-                }
-            }
-            return output
-        }
 
-        mutating func setPixel(x: Int, y: Int, value: Pixel) {
-            pixels[y][x] = value
-        }
-    
-        func getPixel(x: Int, y: Int) -> Pixel {
-            pixels[y][x]
-        }
-        
-        mutating func clear() {
-            for y in 0 ..< height {
-                for x in 0 ..< width {
-                    setPixel(x: x, y: y, value: .o)
-                }
-            }
-        }
-
-//        static let test = Image(width: 17, height: 17)
-
-        static let test = Image(
-            [
-                [.x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x],
-                [.o, .x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x, .o],
-                [.x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x],
-                [.o, .x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x, .o],
-                [.x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x],
-                [.o, .x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x, .o],
-                [.x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x],
-                [.o, .x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x, .o],
-                [.x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x],
-                [.o, .x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x, .o],
-                [.x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x],
-                [.o, .x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x, .o],
-                [.x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x, .o, .x],
-            ]
-        )
-
-//        static let test = Image(
-//            [
-//                [.x, .o, .o, .o, .o, .o, .o, .o, .o, .x],
-//                [.x, .x, .x, .x, .x, .x, .x, .x, .x, .x],
-//                [.x, .o, .o, .o, .o, .o, .o, .o, .o, .x],
-//                [.x, .o, .x, .o, .o, .o, .o, .x, .o, .x],
-//                [.x, .o, .o, .o, .o, .o, .o, .o, .o, .x],
-//                [.x, .o, .o, .o, .x, .x, .o, .o, .o, .x],
-//                [.x, .o, .o, .x, .o, .o, .x, .o, .o, .x],
-//                [.x, .o, .o, .o, .o, .o, .o, .o, .o, .x],
-//                [.o, .x, .x, .x, .x, .x, .x, .x, .x, .o],
-//            ]
-//        )
-    }
     
     // MARK: State
     
@@ -149,47 +55,49 @@ private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: 
     private var printing = false
 //    private var axisDistance = [MotorPort : Int]()
     
-    private let xAxisController: LinearMotorController
-    private let yAxisController: LinearMotorController
-    private let robot: Robot
-    private let configuration: Configuration
+    private var xAxisController: LinearMotorController!
+    private var yAxisController: LinearMotorController!
+    private var robot: Robot!
+    private var configuration: Configuration!
     
     // MARK: Methods
     
-    init(configuration: Configuration) async {
-        let connection = await BluetoothConnection()
-        let hub = await Hub(connection: connection)
-        let robot = await Robot(orientation: .left, hub: hub)
-        self.robot = robot
-        self.configuration = configuration
-        self.xAxisController = LinearBacklashMotorController(
-            backlash: Measurement(value: 3, unit: .millimeters),
-            motor: LinearCamMotorController(
-                camLength: configuration.xAxis.camLength,
-                motor: GearedMotorController(
-                    ratio: 24.0,
-                    motor: DirectMotorController(
-                        port: configuration.xAxis.motor.port,
-                        speed: configuration.xAxis.motor.speed,
-                        robot: robot
+    init(configuration: Configuration) {
+        Task {
+            let connection = await BluetoothConnection()
+            let hub = await Hub(connection: connection)
+            let robot = await Robot(orientation: .left, hub: hub)
+            self.robot = robot
+            self.configuration = configuration
+            self.xAxisController = LinearBacklashMotorController(
+                backlash: Measurement(value: 3, unit: .millimeters),
+                motor: LinearCamMotorController(
+                    camLength: configuration.xAxis.camLength,
+                    motor: GearedMotorController(
+                        ratio: 24.0,
+                        motor: DirectMotorController(
+                            port: configuration.xAxis.motor.port,
+                            speed: configuration.xAxis.motor.speed,
+                            robot: robot
+                        )
                     )
                 )
             )
-        )
-        self.yAxisController = LinearBacklashMotorController(
-            backlash: Measurement(value: 3, unit: .millimeters),
-            motor: LinearCamMotorController(
-                camLength: configuration.yAxis.camLength,
-                motor: GearedMotorController(
-                    ratio: 24.0,
-                    motor: DirectMotorController(
-                        port: configuration.yAxis.motor.port,
-                        speed: configuration.yAxis.motor.speed,
-                        robot: robot
+            self.yAxisController = LinearBacklashMotorController(
+                backlash: Measurement(value: 3, unit: .millimeters),
+                motor: LinearCamMotorController(
+                    camLength: configuration.yAxis.camLength,
+                    motor: GearedMotorController(
+                        ratio: 24.0,
+                        motor: DirectMotorController(
+                            port: configuration.yAxis.motor.port,
+                            speed: configuration.yAxis.motor.speed,
+                            robot: robot
+                        )
                     )
                 )
             )
-        )
+        }
     }
     
     func connect() {
@@ -262,7 +170,7 @@ private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: 
     }
 
     func test() {
-        let image = Image.test
+        let image = Image.checker13x13
         print(image)
     }
     
@@ -314,7 +222,7 @@ private let logger = Logger(subsystem: Bundle.main.bundleIdentifier!, category: 
         try await yAxisController.zero()
     }
     
-    private func plotRow(_ row: [Image.Pixel]) async throws {
+    private func plotRow(_ row: [Image.Element]) async throws {
         guard printing == true else {
             return
         }

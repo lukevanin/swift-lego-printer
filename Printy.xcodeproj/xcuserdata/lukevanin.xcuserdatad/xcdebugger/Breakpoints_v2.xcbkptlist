@@ -316,13 +316,13 @@
             filePath = "Printy/Printer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "393"
-            endingLineNumber = "393"
+            startingLineNumber = "301"
+            endingLineNumber = "301"
             landmarkName = "rangeAxis(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "9B382DD5-71F1-490C-912A-1FA926DA7105 - 55fc9e7cbfb77ca5"
+                  uuid = "9B382DD5-71F1-490C-912A-1FA926DA7105 - 55fc9e7cbfb488d9"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -332,12 +332,12 @@
                   urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "393"
-                  endingLineNumber = "393"
+                  startingLineNumber = "301"
+                  endingLineNumber = "301"
                   offsetFromSymbolStart = "84">
                </Location>
                <Location
-                  uuid = "9B382DD5-71F1-490C-912A-1FA926DA7105 - 941dfed3a388904e"
+                  uuid = "9B382DD5-71F1-490C-912A-1FA926DA7105 - 941dfed3a38b6432"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -347,12 +347,12 @@
                   urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "393"
-                  endingLineNumber = "393"
+                  startingLineNumber = "301"
+                  endingLineNumber = "301"
                   offsetFromSymbolStart = "48">
                </Location>
                <Location
-                  uuid = "9B382DD5-71F1-490C-912A-1FA926DA7105 - e3f587f19f1aceae"
+                  uuid = "9B382DD5-71F1-490C-912A-1FA926DA7105 - e3f587f19f193ad2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -362,8 +362,8 @@
                   urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "393"
-                  endingLineNumber = "393"
+                  startingLineNumber = "301"
+                  endingLineNumber = "301"
                   offsetFromSymbolStart = "76">
                </Location>
             </Locations>
@@ -379,13 +379,13 @@
             filePath = "Printy/Printer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "394"
-            endingLineNumber = "394"
+            startingLineNumber = "302"
+            endingLineNumber = "302"
             landmarkName = "rangeAxis(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "9EC1E4E7-9BEF-4155-B61F-A5D1AB6AF100 - 340ccecb8d81b0d4"
+                  uuid = "9EC1E4E7-9BEF-4155-B61F-A5D1AB6AF100 - 340ccecb8d8244f0"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -395,12 +395,12 @@
                   urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "394"
-                  endingLineNumber = "394"
+                  startingLineNumber = "302"
+                  endingLineNumber = "302"
                   offsetFromSymbolStart = "152">
                </Location>
                <Location
-                  uuid = "9EC1E4E7-9BEF-4155-B61F-A5D1AB6AF100 - eef7281cda60d433"
+                  uuid = "9EC1E4E7-9BEF-4155-B61F-A5D1AB6AF100 - eef7281cda632017"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -410,12 +410,12 @@
                   urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "394"
-                  endingLineNumber = "394"
+                  startingLineNumber = "302"
+                  endingLineNumber = "302"
                   offsetFromSymbolStart = "48">
                </Location>
                <Location
-                  uuid = "9EC1E4E7-9BEF-4155-B61F-A5D1AB6AF100 - 149d3f5ada5af4d6"
+                  uuid = "9EC1E4E7-9BEF-4155-B61F-A5D1AB6AF100 - 149d3f5ada5900f2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -425,12 +425,12 @@
                   urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "394"
-                  endingLineNumber = "394"
+                  startingLineNumber = "302"
+                  endingLineNumber = "302"
                   offsetFromSymbolStart = "96">
                </Location>
                <Location
-                  uuid = "9EC1E4E7-9BEF-4155-B61F-A5D1AB6AF100 - d3bda03806006cd2"
+                  uuid = "9EC1E4E7-9BEF-4155-B61F-A5D1AB6AF100 - d3bda038060398f6"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -440,8 +440,8 @@
                   urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "394"
-                  endingLineNumber = "394"
+                  startingLineNumber = "302"
+                  endingLineNumber = "302"
                   offsetFromSymbolStart = "76">
                </Location>
             </Locations>
@@ -457,13 +457,13 @@
             filePath = "Printy/Printer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395"
+            startingLineNumber = "303"
+            endingLineNumber = "303"
             landmarkName = "rangeAxis(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "86FC4E23-67C2-49F4-A1B7-57378E8005F3 - 149d3f5ada5af4f7"
+                  uuid = "86FC4E23-67C2-49F4-A1B7-57378E8005F3 - 149d3f5ada590113"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -473,12 +473,12 @@
                   urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "395"
-                  endingLineNumber = "395"
+                  startingLineNumber = "303"
+                  endingLineNumber = "303"
                   offsetFromSymbolStart = "140">
                </Location>
                <Location
-                  uuid = "86FC4E23-67C2-49F4-A1B7-57378E8005F3 - 475091251238080c"
+                  uuid = "86FC4E23-67C2-49F4-A1B7-57378E8005F3 - 47509125123bfde8"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -488,12 +488,12 @@
                   urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "395"
-                  endingLineNumber = "395"
+                  startingLineNumber = "303"
+                  endingLineNumber = "303"
                   offsetFromSymbolStart = "48">
                </Location>
                <Location
-                  uuid = "86FC4E23-67C2-49F4-A1B7-57378E8005F3 - f32d6fa9283728f1"
+                  uuid = "86FC4E23-67C2-49F4-A1B7-57378E8005F3 - f32d6fa92834dd15"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -503,12 +503,12 @@
                   urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "395"
-                  endingLineNumber = "395"
+                  startingLineNumber = "303"
+                  endingLineNumber = "303"
                   offsetFromSymbolStart = "96">
                </Location>
                <Location
-                  uuid = "86FC4E23-67C2-49F4-A1B7-57378E8005F3 - 54c2be49f52a773e"
+                  uuid = "86FC4E23-67C2-49F4-A1B7-57378E8005F3 - 54c2be49f52982da"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -518,8 +518,8 @@
                   urlString = "file:///Users/lukevanin/Developer/Me/Printy/Printy/Printer.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "395"
-                  endingLineNumber = "395"
+                  startingLineNumber = "303"
+                  endingLineNumber = "303"
                   offsetFromSymbolStart = "76">
                </Location>
             </Locations>
@@ -535,8 +535,8 @@
             filePath = "Printy/Printer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "226"
-            endingLineNumber = "226"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
             landmarkName = "controlXAxis(direction:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -555,6 +555,134 @@
             endingLineNumber = "62"
             landmarkName = "move(degrees:)"
             landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "73891DB1-023D-4E9C-B3E0-CBBDA0108A6A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Printy/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
+            landmarkName = "documentBrowser(_:didImportDocumentAt:toDestinationURL:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5FCB654F-7F79-4C70-8D05-7FA6BF64F85C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Printy/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "documentBrowser(_:didPickDocumentsAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CDE452A6-02EF-4246-BEC1-BE069D89FA29"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Printy/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "application(_:open:options:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "047A5816-A857-49C0-810F-1D4EAF014F79"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Printy/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+            landmarkName = "documentBrowser(_:didRequestDocumentCreationWithHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DEB81FF2-ECF1-4657-8BDA-B7889E86E300"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Printy/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
+            landmarkName = "documentBrowser(_:didRequestDocumentCreationWithHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "78DEBC25-4DC7-487B-BE35-CE2CE48F9406"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Printy/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "documentBrowser(_:didRequestDocumentCreationWithHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C32CEE97-FD9F-4E61-B488-1AA99D85AADE"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Printy/AppDelegate.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "documentBrowser(_:failedToImportDocumentAt:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "58B2ED11-A7FC-413B-8F2C-28F1D61D0495"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PrintyThumbnail/ThumbnailProvider.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "provideThumbnail(for:_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

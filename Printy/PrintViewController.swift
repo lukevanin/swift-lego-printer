@@ -1,36 +1,20 @@
+//
+//  PrinterCalibrationViewController.swift
+//  Printy
+//
+//  Created by Luke Van In on 2022/11/24.
+//
+
 import UIKit
 
-
-let pixelSize = CGFloat(44)
-let pixelInset = CGFloat(8)
+import PrintySDK
 
 
-final class MainViewController: UIViewController {
+final class PrintViewController: UIViewController {
     
-    private let stopButton: UIButton = {
-        var configuration = UIButton.Configuration.filled()
-        configuration.title = "Stop"
-        configuration.image = UIImage(systemName: "exclamationmark.octagon")
-        configuration.baseBackgroundColor = .systemRed
-        let button = UIButton(configuration: configuration)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
-    private let printButton: UIButton = {
-        var configuration = UIButton.Configuration.filled()
-        configuration.title = "Print"
-        configuration.image = UIImage(systemName: "printer.dotmatrix")
-        configuration.baseBackgroundColor = .systemGreen
-        let button = UIButton(configuration: configuration)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-
-    private let clearButton: UIButton = {
-        var configuration = UIButton.Configuration.filled()
-        configuration.title = "Clear"
-        configuration.image = UIImage(systemName: "xmark.bin")
+    private let dismissButton: UIButton = {
+        var configuration = UIButton.Configuration.borderless()
+        configuration.title = "Done"
         let button = UIButton(configuration: configuration)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -47,6 +31,7 @@ final class MainViewController: UIViewController {
 
     private let yRangeButton: UIButton = {
         var configuration = UIButton.Configuration.filled()
+        configuration.title = "Y Range"
         configuration.image = UIImage(systemName: "arrow.up.and.down")
         let button = UIButton(configuration: configuration)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -55,6 +40,7 @@ final class MainViewController: UIViewController {
 
     private let xRangeButton: UIButton = {
         var configuration = UIButton.Configuration.filled()
+        configuration.title = "X Range"
         configuration.image = UIImage(systemName: "arrow.left.and.right")
         let button = UIButton(configuration: configuration)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -63,6 +49,7 @@ final class MainViewController: UIViewController {
 
     private let yDecrementButton: UIButton = {
         var configuration = UIButton.Configuration.filled()
+        configuration.title = "Move -Y"
         configuration.image = UIImage(systemName: "arrow.up")
         let button = UIButton(configuration: configuration)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -71,6 +58,7 @@ final class MainViewController: UIViewController {
 
     private let yIncrementButton: UIButton = {
         var configuration = UIButton.Configuration.filled()
+        configuration.title = "Move +Y"
         configuration.image = UIImage(systemName: "arrow.down")
         let button = UIButton(configuration: configuration)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -79,6 +67,7 @@ final class MainViewController: UIViewController {
 
     private let xDecrementButton: UIButton = {
         var configuration = UIButton.Configuration.filled()
+        configuration.title = "Move -X"
         configuration.image = UIImage(systemName: "arrow.left")
         let button = UIButton(configuration: configuration)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -87,6 +76,7 @@ final class MainViewController: UIViewController {
 
     private let xIncrementButton: UIButton = {
         var configuration = UIButton.Configuration.filled()
+        configuration.title = "Move +X"
         configuration.image = UIImage(systemName: "arrow.right")
         let button = UIButton(configuration: configuration)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -111,19 +101,50 @@ final class MainViewController: UIViewController {
         return button
     }()
     
-    private var canvasImageView: UIImageView = {
-        let view = UIImageView()
+    private let stopButton: UIButton = {
+        var configuration = UIButton.Configuration.filled()
+        configuration.title = "Stop"
+        configuration.image = UIImage(systemName: "exclamationmark.octagon")
+        configuration.baseBackgroundColor = .systemRed
+        let button = UIButton(configuration: configuration)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let printButton: UIButton = {
+        var configuration = UIButton.Configuration.filled()
+        configuration.title = "Print"
+        configuration.image = UIImage(systemName: "printer.dotmatrix")
+        configuration.baseBackgroundColor = .systemGreen
+        let button = UIButton(configuration: configuration)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }()
+    
+    private let previewImageView: UIImageView = {
+        var view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.contentMode = .center
-        view.clipsToBounds = true
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
-    private var printerImage = Printer.Image.test
-
+    private let imageRenderer: ImageRenderer = {
+        let configuration = ImageRenderer.Configuration(
+            elementSize: CGSize(width: 32, height: 32),
+            dotSize: CGSize(width: 30, height: 30),
+            dotColor: .systemCyan,
+            borderColor: nil,
+            backgroundColor: .white
+        )
+        let renderer = ImageRenderer(configuration: configuration)
+        return renderer
+    }()
+    
+    private let document: Document
     private let printer: Printer
     
-    init(printer: Printer) {
+    init(document: Document, printer: Printer) {
+        self.document = document
         self.printer = printer
         super.init(nibName: nil, bundle: nil)
     }
@@ -134,20 +155,17 @@ final class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
+        setupView()
+        setupActions()
+    }
+    
+    private func setupView() {
         
-        let canvasButtonsLayoutView: UIStackView = {
-            let layout = UIStackView()
-            layout.translatesAutoresizingMaskIntoConstraints = false
-            layout.axis = .horizontal
-            layout.spacing = 16
-            layout.addArrangedSubview(clearButton)
-            return layout
-        }()
-
         let buttonsLayoutView: UIStackView = {
             let layout = UIStackView()
             layout.translatesAutoresizingMaskIntoConstraints = false
-            layout.axis = .horizontal
+            layout.axis = .vertical
             layout.spacing = 16
             layout.addArrangedSubview(connectButton)
             layout.addArrangedSubview(homeButton)
@@ -162,27 +180,30 @@ final class MainViewController: UIViewController {
             layout.addArrangedSubview(stopButton)
             return layout
         }()
-        
+
         let mainLayoutView: UIStackView = {
             let layout = UIStackView()
             layout.translatesAutoresizingMaskIntoConstraints = false
-            layout.axis = .vertical
-            layout.alignment = .center
-            layout.spacing = 32
+            layout.axis = .horizontal
+            layout.spacing = 16
+            layout.addArrangedSubview(previewImageView)
             layout.addArrangedSubview(buttonsLayoutView)
-            layout.addArrangedSubview(canvasImageView)
-            layout.addArrangedSubview(canvasButtonsLayoutView)
             return layout
         }()
 
         view.addSubview(mainLayoutView)
+        view.addSubview(dismissButton)
         
         NSLayoutConstraint.activate([
-            mainLayoutView.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
-            mainLayoutView.centerYAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerYAnchor),
+            mainLayoutView.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
+            mainLayoutView.centerYAnchor.constraint(equalTo: view.layoutMarginsGuide.centerYAnchor),
             
-            mainLayoutView.widthAnchor.constraint(equalTo: view.safeAreaLayoutGuide.widthAnchor),
+            dismissButton.trailingAnchor.constraint(equalTo: view.layoutMarginsGuide.trailingAnchor, constant: -16),
+            dismissButton.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor, constant: 16),
         ])
+    }
+    
+    private func setupActions() {
         
         // Button actions
 
@@ -212,53 +233,41 @@ final class MainViewController: UIViewController {
 
         xRangeButton.addTarget(self, action: #selector(onXRangeAction), for: .touchUpInside)
         yRangeButton.addTarget(self, action: #selector(onYRangeAction), for: .touchUpInside)
+        
+        dismissButton.addTarget(self, action: #selector(onDismissAction), for: .touchUpInside)
 
-        clearButton.addAction(
-            UIAction { [weak self] _ in
-                self?.clearImage()
-            },
-            for: .touchUpInside
-        )
-
-        testButton.addAction(
-            UIAction { [weak self] _ in
-                self?.printer.test()
-            },
-            for: .touchUpInside
-        )
-
-        printButton.addAction(
-            UIAction { [weak self] _ in
-                guard let self = self else {
-                    return
-                }
-                self.printer.plot(self.printerImage)
-            },
-            for: .touchUpInside
-        )
-
-        stopButton.addAction(
-            UIAction { [weak self] _ in
-                guard let self = self else {
-                    return
-                }
-                self.printer.stop()
-            },
-            for: .touchUpInside
-        )
-
-        let imageTapGesture = UITapGestureRecognizer(target: self, action: #selector(onCanvasImageTap))
-        canvasImageView.isUserInteractionEnabled = true
-        canvasImageView.addGestureRecognizer(imageTapGesture)
+        testButton.addTarget(self, action: #selector(onTestAction), for: .touchUpInside)
+        printButton.addTarget(self, action: #selector(onPrintAction), for: .touchUpInside)
+        stopButton.addTarget(self, action: #selector(onStopAction), for: .touchUpInside)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        invalidatePreviewImage()
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         printer.reconnect()
-        setupImage()
-        invalidateImage()
     }
     
+    @objc func onDismissAction(button: UIButton) {
+        presentingViewController?.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func onTestAction(button: UIButton) {
+        printer.test()
+    }
+    
+    @objc func onPrintAction(button: UIButton) {
+        let image = document.getImage()
+        printer.plot(image)
+    }
+    
+    @objc func onStopAction(button: UIButton) {
+        printer.stop()
+    }
+
     @objc func onXAxisIncrementStartAction(button: UIButton) {
         printer.controlXAxis(direction: +1)
     }
@@ -290,85 +299,10 @@ final class MainViewController: UIViewController {
     @objc func onYRangeAction(button: UIButton) {
         printer.rangeYAxis()
     }
-
-    @objc func onCanvasImageTap(gesture: UITapGestureRecognizer) {
-        let location = gesture.location(in: canvasImageView)
-        let x = Int(((location.x / pixelSize) - 0.5).rounded())
-        let y = Int(((location.y / pixelSize) - 0.5).rounded())
-        let oldValue = printerImage.getPixel(x: x, y: y)
-        let newValue: Printer.Image.Pixel
-        switch oldValue {
-        case .x:
-            newValue = .o
-        case .o:
-            newValue = .x
-        }
-        printerImage.setPixel(x: x, y: y, value: newValue)
-        invalidateImage()
-    }
     
-    private func setupImage() {
-        let imageSize = self.imageSize()
-        for constraint in canvasImageView.constraints {
-            constraint.isActive = false
-        }
-        NSLayoutConstraint.activate([
-            canvasImageView.widthAnchor.constraint(equalToConstant: imageSize.width),
-            canvasImageView.heightAnchor.constraint(equalToConstant: imageSize.height),
-        ])
-    }
-    
-    private func clearImage() {
-        printerImage.clear()
-        invalidateImage()
-    }
-    
-    private func invalidateImage() {
-        let size = imageSize()
-        let bounds = CGRect(origin: .zero, size: size)
-        let renderer = UIGraphicsImageRenderer(size: size)
-        let image = renderer.image { context in
-            UIColor.white.setFill()
-            context.fill(bounds)
-            for y in 0 ..< printerImage.height {
-                for x in 0 ..< printerImage.width {
-                    let pixel = printerImage.getPixel(x: x, y: y)
-                    let pixelBounds = CGRect(
-                        x: CGFloat(x) * pixelSize,
-                        y: CGFloat(y) * pixelSize,
-                        width: pixelSize,
-                        height: pixelSize
-                    )
-                    let fillBounds = pixelBounds.insetBy(dx: pixelInset, dy: pixelInset)
-                    let borderBounds = pixelBounds.insetBy(dx: 1, dy: 1)
-                    
-                    UIColor.systemCyan.setFill()
-                    context.fill(pixelBounds)
-
-                    UIColor.white.setFill()
-                    context.fill(borderBounds)
-
-                    
-                    let color: UIColor
-                    switch pixel {
-                    case .x:
-                        color = .systemCyan
-                    case .o:
-                        color = .white
-                    }
-                    color.setFill()
-                    context.fill(fillBounds)
-                    
-                }
-            }
-        }
-        canvasImageView.image = image
-    }
-    
-    private func imageSize() -> CGSize {
-        let imageWidth = CGFloat(printerImage.width) * pixelSize
-        let imageHeight = CGFloat(printerImage.height) * pixelSize
-        return CGSize(width: imageWidth, height: imageHeight)
+    private func invalidatePreviewImage() {
+        let image = document.getImage()
+        let uiImage = imageRenderer.renderImage(image)
+        previewImageView.image = uiImage
     }
 }
-
