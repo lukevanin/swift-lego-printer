@@ -77,6 +77,8 @@ final class DocumentEditorViewController: UIViewController {
     
     private func setupView() {
         
+        navigationItem.title = document.localizedName
+        
 //        let buttonsLayoutView: UIStackView = {
 //            let layout = UIStackView()
 //            layout.translatesAutoresizingMaskIntoConstraints = false
@@ -94,7 +96,7 @@ final class DocumentEditorViewController: UIViewController {
             layout.alignment = .center
             layout.distribution = .equalSpacing
             layout.spacing = 32
-            layout.addArrangedSubview(titleLabel)
+//            layout.addArrangedSubview(titleLabel)
             layout.addArrangedSubview(canvasImageView)
 //            layout.addArrangedSubview(buttonsLayoutView)
             return layout

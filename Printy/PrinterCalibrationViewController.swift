@@ -129,6 +129,8 @@ final class PrinterCalibrationViewController: UIViewController {
     
     private func setupView() {
         
+        navigationItem.title = "Calibrate Printer"
+        
         let buttonsLayoutView: UIStackView = {
             let layout = UIStackView()
             layout.translatesAutoresizingMaskIntoConstraints = false

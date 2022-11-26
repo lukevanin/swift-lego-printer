@@ -28,6 +28,7 @@
 		FC9DF9B72930100F008E8D79 /* PrintySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC9DF9A429300D90008E8D79 /* PrintySDK.framework */; };
 		FC9DF9B82930100F008E8D79 /* PrintySDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC9DF9A429300D90008E8D79 /* PrintySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FC9DF9BD2930A6D9008E8D79 /* PrinterCalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DF9BC2930A6D9008E8D79 /* PrinterCalibrationViewController.swift */; };
+		FC9DF9BF29324614008E8D79 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FC9DF9BE29324614008E8D79 /* README.md */; };
 		FCE646582924C339004EB546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE646572924C339004EB546 /* AppDelegate.swift */; };
 		FCE6465C2924C339004EB546 /* DocumentEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6465B2924C339004EB546 /* DocumentEditorViewController.swift */; };
 		FCE646612924C33A004EB546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCE646602924C33A004EB546 /* Assets.xcassets */; };
@@ -103,7 +104,6 @@
 
 /* Begin PBXFileReference section */
 		FC9DF9512924DB1B008E8D79 /* Printer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
-		FC9DF953292CEB43008E8D79 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FC9DF954292D5400008E8D79 /* GearedMotorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GearedMotorController.swift; sourceTree = "<group>"; };
 		FC9DF958292D5472008E8D79 /* LinearCamMotorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearCamMotorController.swift; sourceTree = "<group>"; };
 		FC9DF95A292D5491008E8D79 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
@@ -121,6 +121,7 @@
 		FC9DF9A429300D90008E8D79 /* PrintySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PrintySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC9DF9A629300D90008E8D79 /* PrintySDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrintySDK.h; sourceTree = "<group>"; };
 		FC9DF9BC2930A6D9008E8D79 /* PrinterCalibrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrinterCalibrationViewController.swift; sourceTree = "<group>"; };
+		FC9DF9BE29324614008E8D79 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		FCE646542924C339004EB546 /* Printy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Printy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE646572924C339004EB546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCE6465B2924C339004EB546 /* DocumentEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentEditorViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +190,7 @@
 		FCE6464B2924C339004EB546 = {
 			isa = PBXGroup;
 			children = (
+				FC9DF9BE29324614008E8D79 /* README.md */,
 				FCE646562924C339004EB546 /* Printy */,
 				FC9DF99429300CE6008E8D79 /* PrintyThumbnail */,
 				FC9DF9A529300D90008E8D79 /* PrintySDK */,
@@ -210,7 +212,6 @@
 		FCE646562924C339004EB546 /* Printy */ = {
 			isa = PBXGroup;
 			children = (
-				FC9DF953292CEB43008E8D79 /* README.md */,
 				FCE646572924C339004EB546 /* AppDelegate.swift */,
 				FC9DF960292F95DA008E8D79 /* DocumentBrowserViewController.swift */,
 				FCE6465B2924C339004EB546 /* DocumentEditorViewController.swift */,
@@ -368,6 +369,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC9DF9BF29324614008E8D79 /* README.md in Resources */,
 				FCE646642924C33A004EB546 /* LaunchScreen.storyboard in Resources */,
 				FCE646612924C33A004EB546 /* Assets.xcassets in Resources */,
 			);
