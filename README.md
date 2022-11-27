@@ -107,7 +107,7 @@ Tap the green *Print* button to print the image.
 ## Building the printer
 
 A 3D model of the printer is available for download:
-[Download 3D model](Printo.io)
+[Download 3D model](https://github.com/lukevanin/swift-lego-printer/blob/main/Printy.io)
 
 The model may be viewed and edited with BrickLink Studio which can be downloaded 
 for free from the link below:
