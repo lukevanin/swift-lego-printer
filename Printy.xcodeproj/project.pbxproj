@@ -29,6 +29,17 @@
 		FC9DF9B82930100F008E8D79 /* PrintySDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = FC9DF9A429300D90008E8D79 /* PrintySDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		FC9DF9BD2930A6D9008E8D79 /* PrinterCalibrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC9DF9BC2930A6D9008E8D79 /* PrinterCalibrationViewController.swift */; };
 		FC9DF9BF29324614008E8D79 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = FC9DF9BE29324614008E8D79 /* README.md */; };
+		FC9DF9CB29341A35008E8D79 /* print-screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC9DF9C129341A35008E8D79 /* print-screen.jpg */; };
+		FC9DF9CC29341A35008E8D79 /* render-banner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC9DF9C229341A35008E8D79 /* render-banner.jpg */; };
+		FC9DF9CD29341A35008E8D79 /* render-top.png in Resources */ = {isa = PBXBuildFile; fileRef = FC9DF9C329341A35008E8D79 /* render-top.png */; };
+		FC9DF9CE29341A35008E8D79 /* calibration-screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC9DF9C429341A35008E8D79 /* calibration-screen.jpg */; };
+		FC9DF9CF29341A35008E8D79 /* browser-screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC9DF9C529341A35008E8D79 /* browser-screen.jpg */; };
+		FC9DF9D029341A35008E8D79 /* printer-front.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC9DF9C629341A35008E8D79 /* printer-front.jpg */; };
+		FC9DF9D129341A35008E8D79 /* sample-print.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC9DF9C729341A35008E8D79 /* sample-print.jpg */; };
+		FC9DF9D229341A35008E8D79 /* edit-screen.jpg in Resources */ = {isa = PBXBuildFile; fileRef = FC9DF9C829341A35008E8D79 /* edit-screen.jpg */; };
+		FC9DF9D329341A35008E8D79 /* render-side.png in Resources */ = {isa = PBXBuildFile; fileRef = FC9DF9C929341A35008E8D79 /* render-side.png */; };
+		FC9DF9D429341A35008E8D79 /* render-front.png in Resources */ = {isa = PBXBuildFile; fileRef = FC9DF9CA29341A35008E8D79 /* render-front.png */; };
+		FC9DF9D629341AFE008E8D79 /* Printy.io in Resources */ = {isa = PBXBuildFile; fileRef = FC9DF9D529341AFE008E8D79 /* Printy.io */; };
 		FCE646582924C339004EB546 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE646572924C339004EB546 /* AppDelegate.swift */; };
 		FCE6465C2924C339004EB546 /* DocumentEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE6465B2924C339004EB546 /* DocumentEditorViewController.swift */; };
 		FCE646612924C33A004EB546 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCE646602924C33A004EB546 /* Assets.xcassets */; };
@@ -122,6 +133,17 @@
 		FC9DF9A629300D90008E8D79 /* PrintySDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrintySDK.h; sourceTree = "<group>"; };
 		FC9DF9BC2930A6D9008E8D79 /* PrinterCalibrationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrinterCalibrationViewController.swift; sourceTree = "<group>"; };
 		FC9DF9BE29324614008E8D79 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FC9DF9C129341A35008E8D79 /* print-screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "print-screen.jpg"; sourceTree = "<group>"; };
+		FC9DF9C229341A35008E8D79 /* render-banner.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "render-banner.jpg"; sourceTree = "<group>"; };
+		FC9DF9C329341A35008E8D79 /* render-top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "render-top.png"; sourceTree = "<group>"; };
+		FC9DF9C429341A35008E8D79 /* calibration-screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "calibration-screen.jpg"; sourceTree = "<group>"; };
+		FC9DF9C529341A35008E8D79 /* browser-screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "browser-screen.jpg"; sourceTree = "<group>"; };
+		FC9DF9C629341A35008E8D79 /* printer-front.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "printer-front.jpg"; sourceTree = "<group>"; };
+		FC9DF9C729341A35008E8D79 /* sample-print.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "sample-print.jpg"; sourceTree = "<group>"; };
+		FC9DF9C829341A35008E8D79 /* edit-screen.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "edit-screen.jpg"; sourceTree = "<group>"; };
+		FC9DF9C929341A35008E8D79 /* render-side.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "render-side.png"; sourceTree = "<group>"; };
+		FC9DF9CA29341A35008E8D79 /* render-front.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "render-front.png"; sourceTree = "<group>"; };
+		FC9DF9D529341AFE008E8D79 /* Printy.io */ = {isa = PBXFileReference; lastKnownFileType = file; path = Printy.io; sourceTree = "<group>"; };
 		FCE646542924C339004EB546 /* Printy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Printy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCE646572924C339004EB546 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FCE6465B2924C339004EB546 /* DocumentEditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentEditorViewController.swift; sourceTree = "<group>"; };
@@ -187,10 +209,29 @@
 			path = PrintySDK;
 			sourceTree = "<group>";
 		};
+		FC9DF9C029341A35008E8D79 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				FC9DF9C529341A35008E8D79 /* browser-screen.jpg */,
+				FC9DF9C429341A35008E8D79 /* calibration-screen.jpg */,
+				FC9DF9C829341A35008E8D79 /* edit-screen.jpg */,
+				FC9DF9C129341A35008E8D79 /* print-screen.jpg */,
+				FC9DF9C629341A35008E8D79 /* printer-front.jpg */,
+				FC9DF9C229341A35008E8D79 /* render-banner.jpg */,
+				FC9DF9CA29341A35008E8D79 /* render-front.png */,
+				FC9DF9C929341A35008E8D79 /* render-side.png */,
+				FC9DF9C329341A35008E8D79 /* render-top.png */,
+				FC9DF9C729341A35008E8D79 /* sample-print.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		FCE6464B2924C339004EB546 = {
 			isa = PBXGroup;
 			children = (
 				FC9DF9BE29324614008E8D79 /* README.md */,
+				FC9DF9D529341AFE008E8D79 /* Printy.io */,
+				FC9DF9C029341A35008E8D79 /* Images */,
 				FCE646562924C339004EB546 /* Printy */,
 				FC9DF99429300CE6008E8D79 /* PrintyThumbnail */,
 				FC9DF9A529300D90008E8D79 /* PrintySDK */,
@@ -369,7 +410,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC9DF9D229341A35008E8D79 /* edit-screen.jpg in Resources */,
+				FC9DF9D629341AFE008E8D79 /* Printy.io in Resources */,
 				FC9DF9BF29324614008E8D79 /* README.md in Resources */,
+				FC9DF9D029341A35008E8D79 /* printer-front.jpg in Resources */,
+				FC9DF9CE29341A35008E8D79 /* calibration-screen.jpg in Resources */,
+				FC9DF9CF29341A35008E8D79 /* browser-screen.jpg in Resources */,
+				FC9DF9CC29341A35008E8D79 /* render-banner.jpg in Resources */,
+				FC9DF9D129341A35008E8D79 /* sample-print.jpg in Resources */,
+				FC9DF9D429341A35008E8D79 /* render-front.png in Resources */,
+				FC9DF9CB29341A35008E8D79 /* print-screen.jpg in Resources */,
+				FC9DF9D329341A35008E8D79 /* render-side.png in Resources */,
+				FC9DF9CD29341A35008E8D79 /* render-top.png in Resources */,
 				FCE646642924C33A004EB546 /* LaunchScreen.storyboard in Resources */,
 				FCE646612924C33A004EB546 /* Assets.xcassets in Resources */,
 			);

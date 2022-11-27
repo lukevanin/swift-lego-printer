@@ -2,9 +2,11 @@
 
 *Luke Van In - November 2022*
 
+![Printer (3D render)](Images/render-banner.jpg)
+
 ## Overview
 
-Demo iPad app used to control a 2D (XY) pen plotter using the Lego Mindstorms 
+iPad app used to control a 2D (XY) pen plotter using the Lego Mindstorms 
 Robot Inventor or Spike Prime hub. The app is used to create monochrome bitmap 
 images which are drawn by the Lego printer.
 
@@ -31,7 +33,7 @@ Here is a longer video showing some of the details of the printer:
 This app can be used on iPad, to create images which are draw on a printer using 
 a Lego Mindstorms Robot Inventor or Lego Spike Prime hub.
 
-### Step 1: Pair your device
+### Step 1: Pair the Lego hub with your iPad
 
 Before the Lego hub can be used from the app it needs to be paired with 
 your iPad. This only needs to be done once when the hub is first used, and 
@@ -101,6 +103,33 @@ left-to-right and back-to-front.
 ![Calibrate Printer](Images/calibration-screen.jpg)
 
 Tap the green *Print* button to print the image.
+
+## Building the printer
+
+A 3D model of the printer is available for download:
+[Download 3D model](Printo.io)
+
+The model may be viewed and edited with BrickLink Studio which can be downloaded 
+for free from the link below:
+[BrickLink Studio 2.0](https://www.bricklink.com/v3/studio/download.page)
+
+![Front (3D render)](Images/render-front.png)
+
+![Side (3D render)](Images/render-side.png)
+
+![Top (3D render)](Images/render-top.png)
+
+You may use this model as inspiration to create your own printer if you wish. 
+The design makes use of the Lego pieces that I had available at the time. Some
+possible improvements are mentioned below:
+
+- Use a rack and pinion, or chain to move the X and Y axes.
+- Modify the pen holder to accomodate different stationery.
+- Improve the clamping ability of the gate to prevent the paper from shifting 
+during printing.
+
+Be aware that if the geometry of the motor mechanics is changed, then the source 
+code may also need to be modified to compensate for the changes.
 
 ## Background
 
